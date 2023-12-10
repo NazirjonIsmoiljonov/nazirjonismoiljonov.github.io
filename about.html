@@ -1,80 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-    <!-- cmd K + C -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About</title>
+    <title>Contact</title>
     <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
-    <!-- header -->
-    <header>
-        <table width = "300" style="float: right;">
-            <tr>
-                <th>
-                    <a class="header" href="about.html">ABOUT</a>
-                </th>
-                <th>
-                    <a class="header" href="projects.html">PROJECTS</a>
-                </th>
-                <th>
-                    <a class="header" href="contact.html">CONTACT</a>
-                </th>
-            </tr>
-        </table>
-            <a href="index.html"><h1 class="header">NJ Ismoiljonov</h1></a>    
-        <!-- <hr> -->
+    <header class="navbar">
+        <div class="navbar-container">
+            <h1 class="navbar-logo"><a href="index.html">NJ Ismoiljonov</a></h1>
+            <button class="hamburger" id="hamburger" aria-label="Open navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="navbar-nav" id="nav-menu">
+                <a href="about.html">About</a>
+                <a href="projects.html">Projects</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
     </header>
 
+    
+    <section class="about-section">
+        <div class="container">
+            <div class="bio">
+                <h1>About</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse eligendi obcaecati odit saepe mollitia quo placeat earum nobis assumenda eius, nisi quibusdam in harum distinctio quia quisquam. Ullam, sequi quisquam.</p>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse eligendi obcaecati odit saepe mollitia quo placeat earum nobis assumenda eius, nisi quibusdam in harum distinctio quia quisquam. Ullam, sequi quisquam.</p>
 
-    <img src="imgs/profile.png" height="200" width="200" alt="Profile photo" title="Profile photo">
-    <br>
-    <h1>Nazirjon Ismoiljonov</h1>
-    <h2>Duke and DKU Dual-degree Undergraduate student.</h2>
-    <h3>Computation and Design / Digital Media</h3>
+                <!-- More paragraphs as needed -->
+            </div>
+            <div class="profile-picture">
+                <img src="img/profile_pic2_cut.jpg" alt="NJ Ismoiljonov" />
+            </div>
+        </div>
+    </section>
     
-    <!-- <h3>This is heading 3</h3>
-    <h4>This is heading 4</h4>
-    <h5>This is heading 5</h5>
-    <h6>This is heading 6</h6> -->
+    <section class="skills-section">
+        <h2>Skills</h2>
+        <br>
+        <div class="skills-grid">
+            <!-- Skill categories here -->
+            <div class="skill-category">
+                <h3>Leadership</h3>
+                <ul>
+                    <li>Event Coordination</li>
+                    <li>Startup Founder</li>
+                    <li>Product Management</li>
+                </ul>
+            </div>
+            <!-- Repeat for other skill categories -->
     
-    <p>Passionate about artificial intelligence and the implementation of AI products, through the use of design thinking to analyze the market.
-    <br>Pursuing an undergraduate study at Duke and DKU Dual Degree Program.
-    <br>Enthusiastic about gamification and graphic design.</p>
-    <br>
-    <h3>Work Experience</h3>
-    <ol type="1">
-        <li>Assistant Product Manager | zypl.ai</li>
-        <br>
-        <ol type="i">
-            <li>Leading the zypl.pass team, that has increased businesses' productivity by 8-fold by digitizing paperwork</li>
-            <li>Developing a text recognition system with 95 % accuracy, based on optical character recognition</li>
-            <li>Interviewed 12 telecom and financial experts as part of the design thinking process</li>
-            <li>Conducted market analysis research for understanding supply & demand of Central Asian market</li>
-        </ol>
-        <br>
-        <li>Advertising Director of The Medic Mindset | Duke Kunshan University</li>
-        <br>
-        <ol type="i">
-            <li>Development of promotional posters in social media for ISP guest speakers</li>
-            <li>Preparing certificates for outstanding members of the Student-Led Organization</li>
-        </ol>
-        <br>
-        <li>Instructor of Game Development Club | tajrupt</li>
-        <br>
-        <ol type="i">
-            <li>Organized the enrollment process and engaged 60 applications to the course</li>
-            <li>Taught 15 students on Unity3D's intermediate level of game development</li>
-        </ol>
-    </ol>
-    <br>
+            <div class="skill-category">
+                <h3>Graphic Design</h3>
+                <ul>
+                    <li>Adobe Photoshop</li>
+                    <li>Adobe Illustrator</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Game Development</h3>
+                <ul>
+                    <li>Unity 3D</li>
+                    <li>C#</li>
+                    <li>Animations</li>
+                    <li>AR Implementation</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Programming</h3>
+                <ul>
+                    <li>Python, C++</li>
+                    <li>SQL, PHP</li>
+                    <li>HTML+CSS</li>
+                    <li>JavaScript</li>
+                </ul>
+            </div>
+            <!-- More skill categories as needed -->
+        </div>
+    </section>
     
-    <!-- Footer -->
-    <footer align = "center">
-        <br>
-        <p id="footer_text">© 2023 Nazirjon Ismoiljonov. All rights reserved.</p>
-        <br>
+    
+    
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>© 2023 by Nazirjon Ismoiljonov</p>
+        </div>
     </footer>
+    
+
 </body>
 </html>

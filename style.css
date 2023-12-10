@@ -1,188 +1,637 @@
-@font-face{
-    src: url(font/Raleway/static/Raleway-Light.ttf);
-    font-family: Raleway-Light;
-}
-
-*{
+/* Resets */
+* {
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-#footer_text{
-    color: rgb(255, 255, 255);
+@font-face{
+    src: url(font/Outfit\ \(1\)/static/Outfit-Regular.ttf);
+    font-family: Outfit-Regular;
 }
 
-footer{
-    /* background-color: rgb(18, 74, 158); */
-    clear: both;
-    text-align: center;
+body {
+    font-family: Outfit-Regular;
+    font-size: 16px;
+    background-color: #242429; /* Color for the background */
+    color: #ffffff; /* text color for contrast */
 }
 
-header{
-    margin: 10px;
-    padding: auto;
+/* START OF THE HEADER STYLING **************************************************************************************/
+/* comments and humburger function's logics are created with the help of chatgpt */
+/* Navigation bar styles */
+.navbar {
+    background: #242429; /* Set the background color */
+    padding: 1em 2em; /* Adjust the padding as necessary */
+    z-index: 1000;
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
 
-header,a{
-    color:  rgb(255, 255, 255);
-    font-family: Raleway-Light;
-    text-decoration:none;
-    font-size: small;
-}
-
-.header:hover{
-    color: rgb(156, 156, 156);
-}
-
-#logo{
-    display: inline;
-}
-
-body{
-    font-family: Raleway-Light;
-    background-color: rgb(30, 30, 34);
-    color: rgb(255, 255, 255);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: auto;
-}
-
-.box{
-    border: 3px solid;
-    height: auto;
-    /* float:left; */
-    width: 45%;
-    box-sizing: border-box;
-    margin: 10px;
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 10px;
-    /* overflow: auto; */
 }
 
-.box > p {
-    color: #c9c9c9;
-    width: 100%;
+.navbar-logo {
+    font-size: 1.5em; /* logo size */
+    color: #ffffff; /* Logo text color */
 }
 
-p::selection{
-    color: green;
-    background-color: black;
-}
-
-.box-container {
-    display:flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    align-content:space-between;
-    width: 90%;
-}
-
-
-nav, .dropdown{
-    text-align: right;
-}
-nav li::marker{
-    content: "✅";
-    font-size: 1.5em;
-}
-
-/* DROPDOWM */
-.dropdown button{
-    border: none;
-    background-color: rgb(255, 255, 255);
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    padding: 5px 10px;
-}
-
-.dropdown a{
+.navbar-logo a {
     text-decoration: none;
-    display: block;
-    color: rgb(255, 255, 255);
-    padding: 5px 10px;
-    /* position: absolute; */
+    color: #ffffff; /* Links color */
+    transition: color 0.1s ease; /* Transition for color change | might be useful for later parts*/
 }
 
-.dropdown .content{
-    background-color: rgb(61, 61, 61);
+.navbar-nav a {
+    text-decoration: none;
+    color: #ffffff; /* Links color */
+    margin-left: 2em; /* Space between the links */
+    font-size: 1em; /* link text size */
+    transition: color 0.1s ease; /* Transition for color change | might be useful for later parts*/
+}
+
+.navbar-nav a:hover {
+    color: #d3d3d3; /* Color change on hover */
+}
+
+.navbar-logo a:hover {
+    color: #d3d3d3; /* Color change on hover */
+}
+
+/* Hamburger Menu Button */
+.hamburger {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    background-color: #fff;
+    height: 2px;
+    margin: 5px;
+    width: 30px;
+    transition: all 0.3s ease;
+}
+
+/* Navbar Menu (hidden by default in mobile view) */
+.navbar-nav {
+    display: flex;
+    flex-direction: row;
+    /* existing styles... */
+}
+
+/* Responsive design for mobile/smaller screens */
+@media (max-width: 768px) {
+
+    .navbar-logo {
+        font-size: 1.2em; /* Smaller logo for smaller screens */
+    }
+
+    /* Hamburger menu */
+    .hamburger {
+        display: flex; /* Show the hamburger */
+    }
+
+    /* Stack the navbar items vertically and hide them */
+    .navbar-nav {
+        position: absolute;
+        top: 60px; /* Adjust this based on your navbar height */
+        left: -100%; /* Start off-screen to the left */
+        flex-direction: column;
+        background-color: #242429;
+        width: 100%; /* Full width */
+        transition: left 0.3s ease;
+    }
+
+    /* Navbar items style */
+    .navbar-nav a {
+        padding: 10px;
+        border-bottom: 1px solid #333; /* Add a border or separator between links */
+        display: block;
+    }
+
+    /* Change the left value for the menu to slide in */
+    .navbar-nav.show {
+        left: 0;
+    }
+}
+/* END OF HEADER STYLING **************************************************************************************/
+/* START OF SECTION 1 BACKGROUND STYLING **************************************************************************************/
+.hero {
+    position: relative;
+    height: 80vh; /* Adjust the height as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+}
+
+.hero-background {
     position: absolute;
-    display: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This will cover the area without stretching the image */
+    z-index: -1; /* image stays behind all other content */
 }
 
-.dropdown:hover .content{
-    display: block;
-} 
-
-
-.dropdown:hover button{
-    background-color: rgb(189, 189, 189);
+.hero-content {
+    position: relative;
+    z-index: 1; /* content is above the background image */
 }
 
-.dropdown a:hover{
-    background-color: white;
+.hero-title {
+    font-size: 3em; /* Adjust font size as necessary */
+    margin-bottom: 0.5em;
 }
 
-.dropdown{
+.hero-quote {
+    font-size: 1.5em; /* Adjust font size as necessary */
+    font-style: italic;
+}
+/* END OF SECTION 1 BACKGROUND STYLING **************************************************************************************/
+
+.about-me {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 50px;
+    color: #fff;
+    background-color: #242429;
+}
+
+.bio-text {
+    flex: 1;
+    max-width: 50%;
+}
+
+.bio-photo {
+    flex: 1;
+    text-align: center;
+    position: relative; /* Set the position to relative for the absolute positioning of the icons */
+}
+
+.bio-photo img {
+    max-width: 80%;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 20px; /* Provide space for icons */
+}
+
+.social-links {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    /* transform: translateX(-50%); */
+    display: flex;
+}
+
+.social-icon {
     display: inline-block;
+    margin: 0 10px;
+    border-radius: 50%;
+    overflow: hidden; /* Ensures the images are contained within the border-radius */
 }
 
-/*#logo:hover {
-    animation: spin 2s linear infinite;
-}*/
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+.social-icon img {
+    width: 60px; /* Size of the icons */
+    height: 50px; /* Size of the icons */
+    transition: transform 0.3s ease;
 }
 
-.fadeInElement {
-    animation: fadeIn 3s ease-in-out forwards;
+.social-icon:hover img {
+    transform: scale(1.1); /* Icon grow effect on hover */
 }
 
+/* Responsive design */
+@media (max-width: 768px) {
+    .about-me {
+        flex-direction: column;
+        text-align: center;
+    }
 
-/* media queries */
-@media screen and (max-width: 600px){
-    section {
-        width: 100%;
+    .bio-text,
+    .bio-photo {
+        max-width: 100%;
+    }
+
+    .social-links {
+        position: static; /* Reset the positioning on mobile */
+        transform: none;
+        margin-top: 20px; /* Space between photo and icons */
+    }
+}
+/* END OF SECTION 2 ABOUT ME STYLING **************************************************************************************/
+
+.media-section {
+    padding: 40px;
+    text-align: center;
+    background-color: #f5f5f5; /* Light background for the media section */
+}
+
+.media-section h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #333; /* Dark color for the heading */
+}
+
+.media-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between the media links */
+}
+
+.media-link {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: #333; /* Dark color for the text */
+}
+
+.media-link img {
+    width: 100%;
+    max-width: 300px; /* Maximum width for the images */
+    height: auto;
+    border: 1px solid #ddd; /* Light border for the images */
+    margin-bottom: 8px;
+    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.media-link:hover img {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+.media-description {
+    display: block;
+    font-weight: bold;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .media-container {
+        flex-direction: column; /* Stack the media links on smaller screens */
+    }
+
+    .media-link img {
+        max-width: 80%; /* Adjust image width on smaller screens */
+        margin: 0 auto 8px; /* Center images and add space below */
+    }
+}
+/* END OF SECTION 3 MEDIA STYLING **************************************************************************************/
+
+.site-footer {
+    background-color: #242429;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer-content p {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* END OF FOOTER STYLING ***********************************************************************************************/
+
+
+/* END OF THE HOME PAGE |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+
+/* START OF THE PROJECT PAGE |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Creates three columns */
+    gap: 25px; /* Spacing between items */
+    padding: 15px;
+}
+
+.project-item {
+    position: relative;
+    overflow: hidden; /* Ensures content stays within the item */
+}
+
+.project-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease; /* Smooth scaling on hover */
+}
+
+.project-item .project-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(20, 20, 20, 0.685); /* Semi-transparent overlay */
+    color: #ffffff;
+    opacity: 0; /* Hide info by default */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: opacity 0.3s ease;
+}
+
+.project-item:hover .project-info {
+    opacity: 1; /* Show info on hover */
+}
+
+.project-item:hover img {
+    transform: scale(1.1); /* Zoom effect on the image */
+}
+
+.project-title {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+.project-category {
+    font-size: 0.9em;
+}
+
+/* Responsive adjustments for tablets */
+@media (max-width: 1024px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr); /* Two columns for smaller screens */
     }
 }
 
-.item{
-    border: 2px solid;
-    background-color: rgb(39, 28, 28);
-    text-align: center;
-    padding-top: 10px;
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr; /* One column for mobile screens */
+    }
 }
-.project_container{
+
+
+
+
+
+
+
+
+/* END OF THE PROJECT PAGE |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+
+/* START OF THE GALLERY PAGE |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+
+.gallery-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+}
+
+.gallery-category {
+    margin: 20px 0;
+    width: 100%;
+}
+
+.gallery-grid {
     display: grid;
-    grid-template-rows: 100px 100px 100px 100px 100px 100px;
-    grid-template-columns: 15% 15% 15% 15% 15% 15%;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 15px;
 }
 
-.item-1{
-    /*grid-row-start: 1;
-    grid-row-end: 3;
-    grid-column-start: 1;
-    grid-column-end: 5;
-    Instead of this 4 lines, better to use following:
-    */
-    grid-row: 1 / 3;
-    grid-column: 1 / 5;
+.gallery-divider {
+    width: 80%;
+    height: 2px;
+    background: #ccc; /* A simple line as a divider, you can get creative here */
+    margin: 30px 0;
 }
 
-.item-2{
-    /* grid-row: 1 / 3;
-    grid-column: 5/7; 
-    or better to use following */
-    grid-row: span 2;
-    grid-column: span 2;
+.gallery-item {
+    position: relative;
+    overflow: hidden;
 }
 
-.item-3{
-    /* grid-area: row-start col-start row-end col-end; */
-    grid-area: 3 / 1 / -1 / -1;
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
 }
 
+.gallery-item .gallery-info {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .gallery-info {
+    opacity: 1;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-title {
+    padding: 10px;
+    font-size: 1em;
+    text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+}
+
+
+/* END OF THE GALLERY PAGE |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+
+/* START OF THE CONTACT PAGE |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+
+.contact-page {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    color: #fff; /* Adjust as per your color scheme */
+    background-color: #333; /* Adjust as per your color scheme */
+}
+
+.contact-page h2 {
+    text-align: center;
+}
+
+.social-media-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.social-media-icons a {
+    text-decoration: none;
+    color: #fff; /* Adjust as per your color scheme */
+    /* Add additional styling for your social media icons */
+}
+
+.form-group {
+    display: flex;
+    gap: 10px;
+}
+
+.form-group input[type="text"] {
+    width: 50%;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    background-color: #555; /* Adjust as per your color scheme */
+    color: #fff; /* Adjust as per your color scheme */
+}
+
+textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: rgb(71, 133, 199); /* Adjust as per your color scheme */
+    color: #fff;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3; /* Adjust for hover state */
+}
+
+.social-media-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Adjust the space between icons */
+    margin-bottom: 20px; /* Space below the icon set */
+    margin-top: 20px;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%; /* Makes the icons circular */
+    width: 40px; /* Size of the icons */
+    height: 40px; /* Size of the icons */
+    color: #fff; /* Icon color */
+    font-weight: bold; /* If you're using text instead of SVGs */
+    text-decoration: none; /* Removes underline from links */
+}
+
+/* LinkedIn Icon */
+.social-icon.linkedin {
+    background-color: #0077b5; /* LinkedIn brand color */
+}
+
+/* Instagram Icon */
+.social-icon.instagram {
+    background-color: #e13030; /* Instagram brand color */
+}
+
+/* Email Icon */
+.social-icon.email {
+    background-color: #777777; /* A neutral color for email */
+}
+
+
+/* END OF THE CONTACT PAGE |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+
+/* START OF THE ABOUT PAGE |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+
+.about-section .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    max-width: 1200px; /* or your preferred max width */
+    margin: auto;
+}
+
+.about-section .bio,
+.about-section .profile-picture {
+    flex-basis: 48%; /* Splits the container into two halves */
+    margin-left: 10%;
+}
+
+.about-section .bio h1,
+.about-section .skills-section h2 {
+    margin-bottom: 1rem;
+}
+
+.about-section .profile-picture img {
+    max-width: 70%;
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove any default inline spacing */
+}
+
+.skills-section {
+    text-align: center; /* Center-aligns the skills titles */
+    padding: 20px;
+}
+
+.skills-section .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Four columns grid */
+    gap: 20px; /* Adjust gap as needed */
+    max-width: 1200px;
+    margin: auto;
+}
+
+.skills-section .skill-category {
+    background-color: #303030;
+    padding: 20px;
+    list-style: none; /* Removes default list styling */
+}
+
+/* List style */
+.skills-section ul {
+    padding-left: 0; /* Removes default padding */
+}
+
+.skills-section li {
+    text-align: left; /* Aligns text to the left within the grid */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .about-section .container,
+    .skills-section .skills-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-section .bio,
+    .about-section .profile-picture,
+    .skills-section .skills-grid {
+        flex-basis: 100%;
+    }
+
+    .skills-section .skills-grid {
+        grid-template-columns: repeat(2, 1fr); /* Two columns for smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .skills-section .skills-grid {
+        grid-template-columns: 1fr; /* One column for mobile screens */
+    }
+}
