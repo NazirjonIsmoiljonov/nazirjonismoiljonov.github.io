@@ -177,7 +177,7 @@ body {
 }
 
 .bio-photo img {
-    max-width: 80%;
+    max-width: 50%;
     height: auto;
     border-radius: 50%;
     margin-bottom: 20px; /* Provide space for icons */
@@ -194,9 +194,11 @@ body {
 .social-icon {
     display: inline-block;
     margin: 0 10px;
-    border-radius: 50%;
+    border-radius: 80%;
     overflow: hidden; /* Ensures the images are contained within the border-radius */
 }
+
+
 
 .social-icon img {
     width: 60px; /* Size of the icons */
@@ -354,6 +356,11 @@ body {
 .project-category {
     font-size: 0.9em;
 }
+
+.title_classwork{
+    text-align: center;
+}
+
 
 /* Responsive adjustments for tablets */
 @media (max-width: 1024px) {
@@ -582,6 +589,28 @@ button[type="submit"]:hover {
     height: auto; /* Maintain aspect ratio */
     display: block; /* Remove any default inline spacing */
 }
+
+.resume-download {
+    text-align: left; /* Center the button container */
+    margin-top: 20px; /* Add some space above the button */
+}
+
+.download-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px; /* Additional spacing if needed */
+    background-color: #007bff; /* Button color */
+    color: #ffffff; /* Text color */
+    text-decoration: none; /* Remove underline from the link */
+    border-radius: 2px; /* Slight rounding of corners */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.download-button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+    text-decoration: none; /* Ensuring no underline on hover */
+}
+
 
 .skills-section {
     text-align: center; /* Center-aligns the skills titles */
