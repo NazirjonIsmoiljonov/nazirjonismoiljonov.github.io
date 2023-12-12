@@ -18,11 +18,11 @@ body {
 }
 
 /* START OF THE HEADER STYLING **************************************************************************************/
-/* comments and humburger function's logics are created with the help of chatgpt */
+/* humburger function's logics are created with the help of chatgpt */
 /* Navigation bar styles */
 .navbar {
-    background: #242429; /* Set the background color */
-    padding: 1em 2em; /* Adjust the padding as necessary */
+    background: #242429; /* background color */
+    padding: 1em 2em; /* padding */
     z-index: 1000;
     margin-top: 1em;
     margin-bottom: 1em;
@@ -98,7 +98,7 @@ body {
     /* Stack the navbar items vertically and hide them */
     .navbar-nav {
         position: absolute;
-        top: 60px; /* Adjust this based on your navbar height */
+        top: 60px; /* based on navbar height */
         left: -100%; /* Start off-screen to the left */
         flex-direction: column;
         background-color: #242429;
@@ -146,12 +146,12 @@ body {
 }
 
 .hero-title {
-    font-size: 3em; /* Adjust font size as necessary */
+    font-size: 3em; /* font size */
     margin-bottom: 0.5em;
 }
 
 .hero-quote {
-    font-size: 1.5em; /* Adjust font size as necessary */
+    font-size: 1.5em; /* font size */
     font-style: italic;
 }
 /* END OF SECTION 1 BACKGROUND STYLING **************************************************************************************/
@@ -173,14 +173,14 @@ body {
 .bio-photo {
     flex: 1;
     text-align: center;
-    position: relative; /* Set the position to relative for the absolute positioning of the icons */
+    position: relative; /* position to relative for the absolute positioning of the icons */
 }
 
 .bio-photo img {
     max-width: 50%;
     height: auto;
     border-radius: 50%;
-    margin-bottom: 20px; /* Provide space for icons */
+    margin-bottom: 20px; /* space for icons */
 }
 
 .social-links {
@@ -378,11 +378,6 @@ body {
 
 
 
-
-
-
-
-
 /* END OF THE PROJECT PAGE |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
 
 /* START OF THE GALLERY PAGE |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
@@ -465,8 +460,8 @@ body {
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
-    color: #fff; /* Adjust as per your color scheme */
-    background-color: #333; /* Adjust as per your color scheme */
+    color: #fff; /* color scheme */
+    background-color: #333;
 }
 
 .contact-page h2 {
@@ -482,8 +477,8 @@ body {
 
 .social-media-icons a {
     text-decoration: none;
-    color: #fff; /* Adjust as per your color scheme */
-    /* Add additional styling for your social media icons */
+    color: #fff; 
+    /* Add additional styling for social media icons */
 }
 
 .form-group {
@@ -502,8 +497,8 @@ textarea {
     padding: 10px;
     margin-bottom: 10px;
     border: none;
-    background-color: #555; /* Adjust as per your color scheme */
-    color: #fff; /* Adjust as per your color scheme */
+    background-color: #555; 
+    color: #fff; /* 
 }
 
 textarea {
@@ -515,13 +510,12 @@ button[type="submit"] {
     width: 100%;
     padding: 10px;
     border: none;
-    background-color: rgb(71, 133, 199); /* Adjust as per your color scheme */
-    color: #fff;
+    background-color: rgb(71, 133, 199);
     cursor: pointer;
 }
 
 button[type="submit"]:hover {
-    background-color: #0056b3; /* Adjust for hover state */
+    background-color: #0056b3; /* for hover state */
 }
 
 .social-media-icons {
@@ -569,7 +563,7 @@ button[type="submit"]:hover {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    max-width: 1200px; /* or your preferred max width */
+    max-width: 1200px; /* or preferred max width */
     margin: auto;
 }
 
